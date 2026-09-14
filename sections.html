@@ -103,10 +103,14 @@ h3.section-title{font-size:28px;font-weight:800;letter-spacing:-.02em;margin:14p
 /* ---- Fantasy (slate panel) ---- */
 .slate-panel{background:var(--tile-gradient);border-radius:16px;padding:28px 24px;margin-top:28px;color:var(--white)}
 .slate-panel .panel-grid{margin-top:0;gap:16px}
-.slate-card{background:rgba(255,255,255,.04);border:1px solid rgba(125,139,150,.25);border-radius:14px;padding:18px 22px}
+.slate-card{display:block;background:rgba(255,255,255,.04);border:1px solid rgba(125,139,150,.25);border-radius:14px;padding:18px 22px}
 .slate-card h4{font-size:16px;font-weight:700;margin:0;color:var(--white)}
 .slate-card p{font-size:13.5px;color:var(--muted-dark);line-height:1.55;margin:6px 0 0}
 .slate-card code{font-family:var(--font-mono);font-size:12px;color:var(--code-fg)}
+a.slate-card{color:inherit;transition:border-color var(--duration-fast) var(--ease-standard),transform var(--duration-fast) var(--ease-standard),background var(--duration-fast) var(--ease-standard)}
+a.slate-card:hover{border-color:var(--teal);background:rgba(255,255,255,.07);transform:translateY(-1px)}
+a.slate-card .open{display:block;margin-top:14px;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark)}
+a.slate-card:hover .open{color:var(--teal)}
 
 /* ---- Footer ---- */
 footer{border-top:1px solid var(--line)}
@@ -198,10 +202,11 @@ footer .sheet{padding-top:16px;padding-bottom:18px;display:flex;align-items:cent
     <p class="lede">A league newsletter nobody asked for and everybody reads. Everything is computed straight from the Sleeper API, so the trash talk is at least numerically accurate.</p>
     <div class="slate-panel">
       <div class="panel-grid">
-        <div class="slate-card">
+        <a class="slate-card" href="newsletters/">
           <h4>Weekly newsletter</h4>
           <p>Matchup recaps, standings, and storylines, pulled from <code>api.sleeper.app</code> every week and rendered into a retro email template. One self-contained HTML file, sent to the league.</p>
-        </div>
+          <span class="open">Read the issues &rarr;</span>
+        </a>
         <div class="slate-card">
           <h4>Draft grades</h4>
           <p>Post-draft report card: every pick graded against ADP, a value GPA per team, and superlatives. Collapsible team cards with a snarky one-line teaser each.</p>
